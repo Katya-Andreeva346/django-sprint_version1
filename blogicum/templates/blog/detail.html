@@ -5,11 +5,5 @@
 {% block content %}
   <article>
     {% include "includes/post.html" %}
-    
-    {% if request.resolver_match.view_name == 'blog:post_detail' %}
-      <p>
-        {{ post.text|linebreaksbr }}
-      </p>
-    {% endif %}
   </article>
 {% endblock %}
