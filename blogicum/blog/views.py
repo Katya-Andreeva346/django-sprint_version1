@@ -56,12 +56,12 @@ def index(request):
 def post_detail(request, id):
     """Страница отдельного поста блога"""
     template = 'blog/detail.html'
-    posts_dict = {post['id']: post for post in posts}
+    posts_index = {post['id']: post for post in posts}
 
-    if id not in posts_dict:
+    if id not in posts_index:
         raise Http404(f"Пост с ID {id} не существует")
 
-    context = {'post': posts_dict[id]}
+    context = {'post': posts_index[id]}
     return render(request, template, context)
 
 
